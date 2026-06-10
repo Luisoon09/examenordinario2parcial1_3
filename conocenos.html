@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conócenos</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><label style="color: white; margin: 0 15px;">📌 Menú</label></li>
+            <li><a href="conocenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="inicio.html" class="logout-btn" style="color: white; background: transparent;">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="usuario-info" id="usuarioInfo"></div>
+        <h1>Conócenos</h1>
+        <p>
+            Bienvenido a nuestra empresa. Somos una organización comprometida con la excelencia y la innovación.
+            Con más de 10 años de experiencia en el mercado, hemos ayudado a miles de clientes a alcanzar sus objetivos.
+        </p>
+        <p>
+            Nuestra misión es proporcionar soluciones de calidad que satisfagan las necesidades de nuestros clientes.
+            Contamos con un equipo profesional y dedicado que trabaja día a día para mejorar nuestros servicios.
+        </p>
+        <p>
+            Creemos en la transparencia, la integridad y el compromiso con nuestros clientes. 
+            Cada producto y servicio que ofrecemos está diseñado pensando en tu satisfacción.
+        </p>
+    </div>
+
+    <script>
+        function verificarSesion() {
+            if (sessionStorage.getItem('logueado') !== 'true') {
+                alert('Debes iniciar sesión primero');
+                window.location.href = 'inicio.html';
+            } else {
+                const usuario = sessionStorage.getItem('usuario');
+                document.getElementById('usuarioInfo').textContent = '👤 Usuario: ' + usuario;
+            }
+        }
+        verificarSesion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><label style="color: white; margin: 0 15px;">📌 Menú</label></li>
+            <li><a href="conocenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="inicio.html" class="logout-btn" style="color: white; background: transparent;">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="usuario-info" id="usuarioInfo"></div>
+        <h1>Nuestros Productos</h1>
+        
+        <div class="productos-grid">
+            <div class="producto-card">
+                <h3>Producto 1</h3>
+                <p>Descripción del producto con características de alta calidad</p>
+                <div class="precio">$29.99</div>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto-card">
+                <h3>Producto 2</h3>
+                <p>Producto premium con garantía y soporte incluido</p>
+                <div class="precio">$49.99</div>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto-card">
+                <h3>Producto 3</h3>
+                <p>Solución completa para tu negocio y necesidades</p>
+                <div class="precio">$39.99</div>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto-card">
+                <h3>Producto 4</h3>
+                <p>Pack especial con beneficios exclusivos</p>
+                <div class="precio">$59.99</div>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto-card">
+                <h3>Producto 5</h3>
+                <p>Edición limitada con características avanzadas</p>
+                <div class="precio">$79.99</div>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto-card">
+                <h3>Producto 6</h3>
+                <p>Bestseller con mejor relación precio-calidad</p>
+                <div class="precio">$34.99</div>
+                <button class="btn-comprar">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificarSesion() {
+            if (sessionStorage.getItem('logueado') !== 'true') {
+                alert('Debes iniciar sesión primero');
+                window.location.href = 'inicio.html';
+            } else {
+                const usuario = sessionStorage.getItem('usuario');
+                document.getElementById('usuarioInfo').textContent = '👤 Usuario: ' + usuario;
+            }
+        }
+        verificarSesion();
+    </script>
+</body>
+</html>
